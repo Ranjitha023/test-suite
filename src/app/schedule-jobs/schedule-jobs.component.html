@@ -1,0 +1,50 @@
+<mat-card>
+  <form [formGroup]="scheduleForm" (ngSubmit)="scheduleJob()">
+    <mat-card-content>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Job Name</mat-label>
+        <mat-select [(value)]="selected" formControlName="jobName">
+          <mat-option value="option1">Option 1</mat-option>
+          <mat-option value="option2">Option 2</mat-option>
+          <mat-option value="option3">Option 3</mat-option>
+        </mat-select>
+        <br/>
+      </mat-form-field>
+      <br>
+      <label id="file-upload" >
+          Select file
+          <input formControlName="files" accept=".xml" style="display:none;" type="file" ng2FileSelect [uploader]="uploader" required/>
+      </label>
+      <br/>
+      <div class="selected-file" *ngFor="let item of uploader.queue">
+          {{ item.file.name}}
+      </div>
+      <br/>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <br/>
+      <mat-selection-list formControlName="daySelected">
+        <mat-list-option *ngFor="let day of days" value={{day.substring(0,3)}}>
+          {{day}}
+        </mat-list-option>
+      </mat-selection-list>
+      <br/>
+     <mat-card class= "time-block">
+       <mat-card-content>
+          <button mat-raised-button color="primary" (click)="open()" type="button">Time</button>
+          <mat-form-field>
+            <input matInput formControlName="time" type="time" value="{{selectedTime}}" />
+          </mat-form-field>
+          <button mat-icon-button (click)="multipleTime()" type="button">
+            <mat-icon>add_circle</mat-icon>
+          </button>
+       </mat-card-content>
+     </mat-card>
+      <br/>
+      <button mat-raised-button color="primary" [disabled]="!scheduleForm.valid" type="submit">Schedule job</button>
+    </mat-card-content>
+  </form>
+</mat-card>

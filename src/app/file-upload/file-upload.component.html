@@ -1,0 +1,41 @@
+
+<mat-card>
+      <form [formGroup]="uploadForm" (ngSubmit)="uploadSubmit()">
+        <mat-card-content>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Job Name</mat-label>
+            <input matInput formControlName="jobName" type="text" placeholder="Enter job name" required/><br/>
+          </mat-form-field>
+          <br>
+          <label id="file-upload" >
+              Select file
+              <input accept="js" formControlName="files" style="display:none;" type="file" ng2FileSelect [uploader]="uploader" multiple required />
+          </label>
+          <br>
+          <table>
+            <thead>
+            <tr>
+              <th width="90%">
+                File Name
+              </th>
+              <th width="10%">
+                Remove
+              </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of uploader.queue">
+              <th width="90%">
+                {{ item.file.name}}({{item.file.size/1000000}} MB)
+              </th>
+              <th class="text-center" width="10%">
+                <mat-icon (click)="item.remove()">delete</mat-icon>
+              </th>
+            </tr>
+            </tbody>
+          </table>
+          <br>
+          <button mat-raised-button color="primary" [disabled]="!uploadForm.valid" type="submit">Upload Data</button>
+        </mat-card-content>
+      </form>
+</mat-card>
