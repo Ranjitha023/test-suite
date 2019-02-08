@@ -15,6 +15,7 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ScheduleJobsComponent } from './schedule-jobs/schedule-jobs.component';
 
 import {CustomMaterialModule} from "./shared/modules/material.module";
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {CustomMaterialModule} from "./shared/modules/material.module";
     FileUploadComponent,
     ScheduleJobsComponent,
     FileSelectDirective,
-    FileDropDirective
+    FileDropDirective,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
