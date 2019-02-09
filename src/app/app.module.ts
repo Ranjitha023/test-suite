@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,7 @@ import { ScheduleJobsComponent } from './schedule-jobs/schedule-jobs.component';
 
 import {CustomMaterialModule} from "./shared/modules/material.module";
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     ScheduleJobsComponent,
     FileSelectDirective,
     FileDropDirective,
-    LandingPageComponent
+    LandingPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,9 +35,12 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AmazingTimePickerModule
+    AmazingTimePickerModule,
+    NgbModule.forRoot()
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  //schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class AppModule { }

@@ -8,34 +8,9 @@ header {
   .headerLogo {
     height: 50px
   }
-  
-  /* Create two columns/boxes that floats next to each other */
-  nav {
-    float: left;
-    width: 30%;
-    height: 300px; /* only for demonstration, should be removed */
-    padding: 20px;
-  }
-  
-  /* Style the list inside the menu */
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  article {
-    float: left;
-    padding: 20px;
-    width: 60%;
-    background-color: #f1f1f1;
-    /* height: 200px; only for demonstration, should be removed */
-  }
-  
-  /* Clear floats after the columns */
-  section:after {
-    content: "";
-    display: table;
-    clear: both;
+
+  section {
+    position: relative;
   }
   
   /* Style the footer */
@@ -49,3 +24,23 @@ header {
    text-align: center;
    font-size: 10px;
   }
+  
+  .buttons {
+   align-items: center;
+   margin-top: 50px;
+  }
+  
+  .items {
+    margin-top: 5px;
+    height:270px; 
+    width:100%;
+  }
+
+  .btn-primary{
+    margin-left:297px;
+    height: 100px;
+    width: 200px;
+    background-color: black;
+    border-color: lavender;
+    }
+  
