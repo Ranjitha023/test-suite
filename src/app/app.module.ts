@@ -10,7 +10,6 @@ import {FileDropDirective, FileSelectDirective} from "ng2-file-upload";
 import { AmazingTimePickerModule } from 'amazing-time-picker';
 import {HttpClientModule} from "@angular/common/http";
 
-import { NavigationComponent } from './navigation/navigation.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ScheduleJobsComponent } from './schedule-jobs/schedule-jobs.component';
 
@@ -21,7 +20,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent,
     FileUploadComponent,
     ScheduleJobsComponent,
     FileSelectDirective,
