@@ -1,5 +1,5 @@
 <app-navigation></app-navigation>
-<mat-card>
+<mat-card style="height: 100px">
   <form [formGroup]="scheduleForm" (ngSubmit)="scheduleJob()">
     <mat-card-content>
       <mat-form-field class="form-field" appearance="outline">
@@ -32,7 +32,7 @@
         </mat-list-option>
       </mat-selection-list>
       <!-- <br/> -->
-     <mat-card class= "time-block">
+     <div class= "time-block">
        <mat-card-content>
           <button mat-raised-button color="primary" (click)="open()" type="button">Time</button>
           <mat-form-field>
@@ -43,7 +43,7 @@
           </button>
        </mat-card-content>
        <button mat-raised-button color="primary" [disabled]="!scheduleForm.valid" type="submit">Schedule job</button>
-     </mat-card>
+      </div>
       <!-- <br/> -->
     </mat-card-content>
   </form>
