@@ -1,29 +1,9 @@
-header {
-    background-color: black;
-    text-align: left;
-    color: white;
-    padding: 10px
-  }
-
-  .headerLogo {
-    height: 50px
-  }
 
   section {
     position: relative;
   }
   
-  /* Style the footer */
-  footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: black;
-   color: white;
-   text-align: center;
-   font-size: 10px;
-  }
+  
   
   .buttons {
    align-items: center;

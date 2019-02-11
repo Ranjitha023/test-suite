@@ -1,3 +1,4 @@
+<app-navigation></app-navigation>
 <mat-card>
   <form [formGroup]="scheduleForm" (ngSubmit)="scheduleJob()">
     <mat-card-content>
@@ -10,28 +11,27 @@
         </mat-select>
         <br/>
       </mat-form-field>
-      <br>
       <label id="file-upload" >
           Select file
           <input formControlName="files" accept=".xml" style="display:none;" type="file" ng2FileSelect [uploader]="uploader" required/>
       </label>
-      <br/>
+    
       <div class="selected-file" *ngFor="let item of uploader.queue">
           {{ item.file.name}}
       </div>
-      <br/>
-      <mat-form-field>
+ 
+      <!-- <mat-form-field>
         <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="date">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-      <br/>
+      </mat-form-field> -->
+    
       <mat-selection-list formControlName="daySelected">
         <mat-list-option *ngFor="let day of days" value={{day.substring(0,3)}}>
           {{day}}
         </mat-list-option>
       </mat-selection-list>
-      <br/>
+      <!-- <br/> -->
      <mat-card class= "time-block">
        <mat-card-content>
           <button mat-raised-button color="primary" (click)="open()" type="button">Time</button>
@@ -42,9 +42,9 @@
             <mat-icon>add_circle</mat-icon>
           </button>
        </mat-card-content>
+       <button mat-raised-button color="primary" [disabled]="!scheduleForm.valid" type="submit">Schedule job</button>
      </mat-card>
-      <br/>
-      <button mat-raised-button color="primary" [disabled]="!scheduleForm.valid" type="submit">Schedule job</button>
+      <!-- <br/> -->
     </mat-card-content>
   </form>
 </mat-card>

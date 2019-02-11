@@ -1,19 +1,7 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="sidenav.toggle()">
-      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-    </button>
-    <h2> Test Suite </h2>
-  </mat-toolbar-row>
-</mat-toolbar>
-<mat-sidenav-container class="navbar-container">
-  <mat-sidenav #sidenav mode="side" opened role="navigation">
-    <mat-nav-list>
-      <a mat-list-item routerLink='/file-upload'>Upload Test Scripts</a>
-      <a mat-list-item routerLink='/schedule-jobs'>Schedule Jobs</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<header>
+    <img class="headerLogo" src="./assets/icons/Logo.png" alt="Deloitte Logo">
+  </header>
+  
+<footer>
+    <p> Copyright © 2019 Deloitte Development LLC. All rights reserved.</p>
+  </footer>
