@@ -1,5 +1,6 @@
 <app-navigation></app-navigation>
-<mat-card style="height: 100px">
+<div style="height: 100px; height: 400px; margin-left: 30px; margin-top: 30px">
+    <h3 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Schedule Jobs</h3>
   <form [formGroup]="scheduleForm" (ngSubmit)="scheduleJob()">
     <mat-card-content>
       <mat-form-field class="form-field" appearance="outline">
@@ -11,7 +12,7 @@
         </mat-select>
         <br/>
       </mat-form-field>
-      <label id="file-upload" >
+      <label id="file-upload" style="margin-left: 10px ;background-color: black">
           Select file
           <input formControlName="files" accept=".xml" style="display:none;" type="file" ng2FileSelect [uploader]="uploader" required/>
       </label>
@@ -34,7 +35,8 @@
       <!-- <br/> -->
      <div class= "time-block">
        <mat-card-content>
-          <button mat-raised-button color="primary" (click)="open()" type="button">Time</button>
+          <button mat-raised-button [color]="'black'" (click)="open()" style="margin-right: 10px" type="button">Time</button>
+          
           <mat-form-field>
             <input matInput formControlName="time" type="time" value="{{selectedTime}}" />
           </mat-form-field>
@@ -42,9 +44,9 @@
             <mat-icon>add_circle</mat-icon>
           </button>
        </mat-card-content>
-       <button mat-raised-button color="primary" [disabled]="!scheduleForm.valid" type="submit">Schedule job</button>
+       <button mat-raised-button [color]="'black'" [disabled]="!scheduleForm.valid" type="submit">Schedule job</button>
       </div>
       <!-- <br/> -->
     </mat-card-content>
   </form>
-</mat-card>
+</div>

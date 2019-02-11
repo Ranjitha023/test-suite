@@ -1,5 +1,6 @@
-<app-navigation></app-navigation>
-<mat-card>
+
+<div style="height: 400px; margin-left: 30px; margin-top: 30px">
+  <h3 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Upload File</h3>
       <form [formGroup]="uploadForm" (ngSubmit)="uploadSubmit()">
         <mat-card-content>
           <mat-form-field class="form-field" appearance="outline">
@@ -7,12 +8,13 @@
             <input matInput formControlName="jobName" type="text" placeholder="Enter job name" required/><br/>
           </mat-form-field>
           <br>
-          <label id="file-upload" >
+          <label id="file-upload" style="background-color: black">
               Select file
               <input accept="js" formControlName="files" style="display:none;" type="file" ng2FileSelect [uploader]="uploader" multiple required />
           </label>
           <br>
-          <table>
+          <br>
+          <table *ngIf = "uploader.queue.length > 0">
             <thead>
             <tr>
               <th width="90%">
@@ -35,7 +37,7 @@
             </tbody>
           </table>
           <br>
-          <button mat-raised-button color="primary" [disabled]="!uploadForm.valid" type="submit">Upload Data</button>
+          <button mat-raised-button [color]="'black'" [disabled]="!uploadForm.valid" *ngIf = "uploader.queue.length > 0" type="submit">Upload Data</button>
         </mat-card-content>
       </form>
-</mat-card>
+    </div>

@@ -14,3 +14,7 @@ input[type="file"] {
     cursor: pointer;
 }
 
+.mat-black {
+    background-color: black;
+    color: white;
+}

@@ -13,3 +13,12 @@ input[type="file"] {
     border-radius: 4px;
     cursor: pointer;
 }
+
+.mat-black {
+    background-color: black;
+    color: white;
+}
+
+::ng-deep .mat-pseudo-checkbox{
+    margin-right: 950px;
+}
