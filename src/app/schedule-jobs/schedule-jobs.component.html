@@ -1,9 +1,15 @@
 <side-bar></side-bar>
-<div style="height: 100px; height: 400px; margin-left: 150px; margin-top: 30px">
+<div style="height: auto; margin-left: 150px; margin-top: 75px">
     <h3 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Schedule Jobs</h3>
+    <div class="alert alert-success" *ngIf="isSuccess">
+        <strong>Success!</strong> Job scheduled.
+    </div>  
+    <div class="alert alert-danger" *ngIf="isError">
+        <strong>Error!</strong> Job not scheduled.
+      </div>
   <form [formGroup]="scheduleForm" (ngSubmit)="scheduleJob()">
     <mat-card-content>
-      <mat-form-field class="form-field" appearance="outline">
+      <mat-form-field class="form-field" appearance="outline">          
         <mat-label>Job Name</mat-label>
         <mat-select [(value)]="selected" formControlName="jobName">
           <mat-option value="option1">Option 1</mat-option>
@@ -12,7 +18,7 @@
         </mat-select>
         <br/>
       </mat-form-field>
-      <label id="file-upload" style="margin-left: 10px ;background-color: black">
+      <label id="file-upload" style="margin-left: 10px; background-color: black">
           Select file
           <input formControlName="files" accept=".xml" style="display:none;" type="file" ng2FileSelect [uploader]="uploader" required/>
       </label>

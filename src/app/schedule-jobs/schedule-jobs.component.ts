@@ -15,7 +15,10 @@ export class ScheduleJobsComponent implements OnInit {
   public selectedTime = '18:33';
   days: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
   scheduleForm: FormGroup;
-  
+
+  public isSuccess:boolean=false;
+  public isError:boolean=false;
+
   public uploader:FileUploader = new FileUploader({
     isHTML5: true
   });
@@ -54,7 +57,7 @@ export class ScheduleJobsComponent implements OnInit {
     var str = this.scheduleForm.get('daySelected').value.toString();
     var regex = new RegExp(',', 'g');
     str = str.replace(regex,';');
-    alert(str+"::"+this.selectedTime);
+    //alert(str+"::"+this.selectedTime);
     data.append('jobScheduleString',str+"::"+this.selectedTime+";");
     this.scheduleJobs(data).subscribe(dataResponse => alert(dataResponse), error => error);
 }
