@@ -15,6 +15,10 @@ export class FileUploadComponent implements OnInit {
 
   uploadForm: FormGroup;
 
+  public isSuccess:boolean=false;
+  public isError:boolean=false;
+
+
   public uploader:FileUploader = new FileUploader({
     isHTML5: true
   });
@@ -28,8 +32,15 @@ export class FileUploadComponent implements OnInit {
           data.append('files',fileItem);
         }
         data.append( 'jobName', this.uploadForm.controls.jobName.value);
-        console.log(data.getAll('files'));
-        this.uploadFile(data).subscribe(data => alert("Success"), error => alert(error));
+        this.uploadFile(data).subscribe(
+          data => {
+                   if(data.dataContent.isSuccess){
+                     this.isSuccess=true;
+                   }      
+                   else {
+                    this.isError=true;
+                   }    
+        }, error => {this.isError=true;});
         this.uploader.clearQueue();
   }
 
@@ -37,7 +48,7 @@ export class FileUploadComponent implements OnInit {
     return this.http.post<any>('http://localhost:9000/brap/api/uploadFiles', data).pipe(map(
       (response:Response) => {
         console.log(response.json);
-        return response.json;
+        return response;
       }
     ));
   }

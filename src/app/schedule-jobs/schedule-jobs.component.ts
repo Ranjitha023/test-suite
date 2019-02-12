@@ -17,6 +17,10 @@ export class ScheduleJobsComponent implements OnInit {
   scheduleForm: FormGroup;
   jobNames: string[] =[];
   
+
+  public isSuccess:boolean=false;
+  public isError:boolean=false;
+
   public uploader:FileUploader = new FileUploader({
     isHTML5: true
   });

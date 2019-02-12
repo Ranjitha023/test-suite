@@ -19,6 +19,10 @@ input[type="file"] {
     color: white;
 }
 
+::ng-deep button:focus{
+    outline: none;
+}
+
 ::ng-deep .mat-pseudo-checkbox{
     margin-right: 950px;
 }
