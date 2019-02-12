@@ -6,9 +6,7 @@
       <mat-form-field class="form-field" appearance="outline">
         <mat-label>Job Name</mat-label>
         <mat-select [(value)]="selected" formControlName="jobName">
-          <mat-option value="option1">Option 1</mat-option>
-          <mat-option value="option2">Option 2</mat-option>
-          <mat-option value="option3">Option 3</mat-option>
+          <mat-option *ngFor="let jobName of jobNames" value={{jobName}}>{{jobName}}</mat-option>
         </mat-select>
         <br/>
       </mat-form-field>
@@ -35,14 +33,20 @@
       <!-- <br/> -->
      <div class= "time-block">
        <mat-card-content>
-          <button mat-raised-button [color]="'black'" (click)="open()" style="margin-right: 10px" type="button">Time</button>
           
-          <mat-form-field>
-            <input matInput formControlName="time" type="time" value="{{selectedTime}}" />
-          </mat-form-field>
           <button mat-icon-button (click)="multipleTime()" type="button">
-            <mat-icon>add_circle</mat-icon>
-          </button>
+              <mat-icon>add_circle</mat-icon>
+            </button>
+          <div formArrayName="timeArray">
+            <div *ngFor="let timeControl of getTimesControl(); let i = index;" [formGroupName] = "i">
+                <button mat-raised-button [color]="'black'" (click)="open(i)" style="margin-right: 10px" type="button">Time</button>
+                <mat-form-field>
+                    <input matInput formControlName="time" type="time" />
+                  </mat-form-field>
+            </div>
+          </div>
+          
+          
        </mat-card-content>
        <button mat-raised-button [color]="'black'" [disabled]="!scheduleForm.valid" type="submit">Schedule job</button>
       </div>
