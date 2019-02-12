@@ -16,6 +16,7 @@ import { ScheduleJobsComponent } from './schedule-jobs/schedule-jobs.component';
 import {CustomMaterialModule} from "./shared/modules/material.module";
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SideBarComponent } from './side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FileSelectDirective,
     FileDropDirective,
     LandingPageComponent,
+    SideBarComponent,
   ],
   imports: [
     BrowserModule,
