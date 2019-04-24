@@ -26,3 +26,7 @@ input[type="file"] {
 ::ng-deep .mat-pseudo-checkbox{
     margin-right: 950px;
 }
+
+::ng-deep .mat-pseudo-checkbox-checked {
+    background: #00796B;
+}

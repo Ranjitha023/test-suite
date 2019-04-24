@@ -86,7 +86,7 @@ export class ScheduleJobsComponent implements OnInit {
 
 open(i: number) {
   const amazingTimePicker = this.atp.open({
-      theme: 'material-blue',
+      theme: 'material-green',
   });
   amazingTimePicker.afterClose().subscribe(time => {
     (<FormArray>this.scheduleForm.get('timeArray')).controls[i].patchValue({"time": time});
